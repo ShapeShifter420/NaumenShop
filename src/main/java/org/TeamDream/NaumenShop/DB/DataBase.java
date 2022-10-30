@@ -1,14 +1,19 @@
 package org.TeamDream.NaumenShop.DB;
 
-import org.TeamDream.NaumenShop.DB.models.Card;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.util.List;
 
 public class DataBase {
 
-    public static Card getCard(int id){
-        return HBSessionUtil.getSessionFactory().openSession().get(Card.class, id);
+    public static Object getObject(int id,Class objClass){
+        return HBSessionUtil.getSessionFactory().openSession().get(objClass, id);
+    }
+
+    public static List getImagesFromGallery(int id){
+        System.out.println(String.format("select src from images_table where gallery_id == %d;",id));
+        try (Session session = HBSessionUtil.getSessionFactory().openSession()) {
+            return session.createSQLQuery(String.format("select src from images_table where gallery_id = %d;",id)).list();
+        }
     }
 }
