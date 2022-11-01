@@ -10,7 +10,7 @@ public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int seller_name;
+    private String seller_name;
 
     public Seller() {
     }
