@@ -25,7 +25,7 @@ public class HelloController {
     public String sayHello() {
         return "index.html";
     }
-    @RequestMapping(value = "/api/{cardId}", method = GET)
+    @RequestMapping(value = "/api/card/{cardId}", method = GET)
     @ResponseBody
     public String getFoosBySimplePathWithPathVariable(
             @PathVariable("cardId") int cardId) {
