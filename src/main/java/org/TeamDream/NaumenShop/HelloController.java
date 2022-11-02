@@ -41,8 +41,11 @@ public class HelloController {
     }
     @RequestMapping(value = "/product/{cardId}", method = GET)
     public String getCard(
-            @PathVariable("cardId") int cardId) {
-        return "card.html";
+            @PathVariable("cardId") int cardId, Model model) {
+        Card card = (Card) DataBase.getObject(cardId, Card.class);
+        FullCard fullCard = new FullCard(card);
+        model.addAttribute("cardInfo", fullCard.getMap());
+        return "card-fill.html";
     }
     @GetMapping("/anotations")
     public String getanotations() {
