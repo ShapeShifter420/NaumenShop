@@ -65,7 +65,7 @@
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Shop</a>
@@ -74,7 +74,7 @@
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="/about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact us</a>
@@ -93,28 +93,27 @@
                 <img class="img-fluid w-100 pb-1" src="resources/img/examplephoto.webp" id="MainImg" alt="">
                 <div class="small-img-group">
                     <div class="small-img-col">
-                        <img src="resources/img/examplephoto.webp" width="100%" class="small-img">
+                        <img src="/resources/img/examplephoto.webp" width="100%" class="small-img">
                     </div>
                     <div class="small-img-col">
-                        <img src="resources/img/inst4.jpeg" width="100%" class="small-img">
+                        <img th:src="${'/resources/img/' + cardInfo.images[0]}" width="100%" class="small-img">
                     </div>
                     <div class="small-img-col">
-                        <img src="resources/img/inst.jpeg" width="100%" class="small-img">
+                        <img th:src="${'/resources/img/' + cardInfo.images[1]}" width="100%" class="small-img">
                     </div>
                     <div class="small-img-col">
-                        <img src="resources/img/inst2.jpeg" width="100%" class="small-img">
+                        <img th:src="${'/resources/img/' + cardInfo.images[2]}" width="100%" class="small-img">
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 col-md-12 col-12">
                 <h6 th:text="${'All \ ' + cardInfo.category['name']}"></h6>
                 <h3 class="py-4" th:text="${cardInfo.name}"></h3>
-                <h2 th:text="${cardInfo.price['current_price'] + ' $'}"></h2>
-                <select class="my-3">
-                    <option>Select Color</option>
-                    <option>White</option>
-                    <option>Black</option>
-                </select>
+                <h4 class="py-4" th:text="${cardInfo.seller['name']}"></h4>
+                <h5 class="py-4" th:text="${cardInfo.status['status']}"></h5>
+                <h2 th:text="${cardInfo.price['current_price']}"></h2>
+                <h2 th:text="${cardInfo.price['old_price']}"></h2>
+                <h2 th:text="${cardInfo.price['bonus_price']}"></h2>
                 <input type="number" value="1">
                 <button type="button" class="buy-btn btn btn-lg btn-secondary">Add to Cart</button>
                 <h4 class="mt-5 mb-5">Product Details</h4>
@@ -158,17 +157,17 @@
             <div class="footer-onr col-lg-3 col-md-6 col-12">
                 <h5>Instagram</h5>
                 <div class="row">
-                    <img class="img-fluid w-25 h-100 m-2" src="resources/img/inst.jpeg">
-                    <img class="img-fluid w-25 h-100 m-2" src="resources/img/inst4.jpeg">
-                    <img class="img-fluid w-25 h-100 m-2" src="resources/img/3.jpeg">
-                    <img class="img-fluid w-25 h-100 m-2" src="resources/img/inst2.jpeg">
+                    <img class="img-fluid w-25 h-100 m-2" src="/resources/img/inst.jpeg">
+                    <img class="img-fluid w-25 h-100 m-2" src="/resources/img/inst4.jpeg">
+                    <img class="img-fluid w-25 h-100 m-2" src="/resources/img/3.jpeg">
+                    <img class="img-fluid w-25 h-100 m-2" src="/resources/img/inst2.jpeg">
                 </div>
             </div>
         </div>
         <div class="fa-copyright mt-5">
             <div class="row container mx-auto">
                 <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <img class="img-fluid w-25 h-100 m-2" src="resources/img/payment.png">
+                    <img class="img-fluid w-25 h-100 m-2" src="/resources/img/payment.png">
                 </div>
                 <div class="col-lg-4 col-md-6 col-12 text-nowrap mb-2">
                     <p> Copyright(C) 2022. All Right Reserved. </p>

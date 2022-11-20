@@ -27,7 +27,7 @@ public class HelloController {
     }
     @RequestMapping(value = "/api/card/{cardId}", method = GET)
     @ResponseBody
-    public String getFoosBySimplePathWithPathVariable(
+    public String getProductJSON(
             @PathVariable("cardId") int cardId) {
         Card card = (Card) DataBase.getObject(cardId, Card.class);
         FullCard fullCard = new FullCard(card);
