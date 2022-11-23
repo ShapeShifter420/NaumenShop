@@ -42,9 +42,16 @@ public class HelloController {
             return "error";
         }
     }
+    @RequestMapping(value = "/api/search/", method = GET)
+    @ResponseBody
+    public String getSearchByName(
+                                  @RequestParam String query,@RequestParam int offset) throws JsonProcessingException {
+        List<HalfCard> halfCards = DataBase.getCardsByName(query,offset).stream().map(HalfCard::new).collect(Collectors.toList());
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.writeValueAsString(halfCards);}
     @RequestMapping(value = "/api/search/", method = POST)
     @ResponseBody
-    public String getSearchByName(@ModelAttribute Filter filter,
+    public String getSearchByNameFilter(@ModelAttribute Filter filter,
             @RequestParam String query,@RequestParam int offset) throws JsonProcessingException {
         List<HalfCard> halfCards = DataBase.getCardsByName(query,offset,filter.getSQLString()).stream().map(HalfCard::new).collect(Collectors.toList());
         ObjectMapper objectMapper = new ObjectMapper();
@@ -66,7 +73,13 @@ public class HelloController {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(halfCards);
     }
-
+    @RequestMapping(value = "/api/sendemail", method = GET)
+    @ResponseBody
+    public String sendEmail(@CookieValue("cart") String cart) throws JsonProcessingException {
+        List<HalfCard> halfCards = DataBase.getCardsByIds(cart.split("~")).stream().map(HalfCard::new).collect(Collectors.toList());
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(halfCards);
+    }
     @GetMapping("/anotations")
     public String getanotations() {
         return "anotations.html";

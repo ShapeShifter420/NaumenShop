@@ -28,7 +28,8 @@ public class DataBase {
     public static void removeCard(int id){
         try (Session session = HBSessionUtil.getSessionFactory().openSession()) {
             Transaction tx1 = session.beginTransaction();
-            session.createQuery("DELETE FROM cardtable WHERE id = :id").setParameter("id", id).executeUpdate();
+            session.delete(DataBase.getObject(id,Card.class));
+            //session.createQuery("DELETE FROM cardtable WHERE id = :id").setParameter("id", id).executeUpdate();
             tx1.commit();
             session.close();
         }
@@ -42,22 +43,22 @@ public class DataBase {
 
     public static List<Card> getCardsByName(String name,int offset){
         try (Session session = HBSessionUtil.getSessionFactory().openSession()) {
-            return session.createSQLQuery("select * from cardtable where name like %:name% limit 100 offset :offset;")
-                    .setParameter("offset", offset).setParameter("name", name).addEntity(Card.class).list();
+            return session.createSQLQuery("select * from cardtable where name like :name limit 100 offset :offset ;")
+                    .setParameter("offset", offset).setParameter("name", '%'+name+'%').addEntity(Card.class).list();
         }
     }
     public static List<Card> getCardsByName(String name, int offset, String filter){
         try (Session session = HBSessionUtil.getSessionFactory().openSession()) {
-            return session.createSQLQuery("select * from cardtable where name like %:name% :dopfilter limit 100 offset :offset;")
+            return session.createSQLQuery("select * from cardtable where name like :name :dopfilter limit 100 offset :offset ;")
                     .setParameter("offset", offset)
-                    .setParameter("name", name)
+                    .setParameter("name", '%'+name+'%')
                     .setParameter("dopfilter",filter).addEntity(Card.class).list();
         }
     }
     public static List<Card> getCardsByIds(String[] ids){
+        System.out.println(String.format("select * from cardtable where id in %s;",'('+StringUtils.join(ids, ",")+')'));
         try (Session session = HBSessionUtil.getSessionFactory().openSession()) {
-            return session.createSQLQuery("select * from cardtable where id in (:list)")
-                    .setParameter("list",StringUtils.join(ids, " , ")).addEntity(Card.class).list();
+            return session.createSQLQuery(String.format("select * from cardtable where id in %s;",'('+StringUtils.join(ids, ",")+')')).addEntity(Card.class).list();
         }
     }
 }

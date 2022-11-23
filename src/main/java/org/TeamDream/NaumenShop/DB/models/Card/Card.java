@@ -32,6 +32,9 @@ public class Card implements IBdModel {
         this.status_id = status_id;
         this.category_id = category_id;
         this.gallery_id = gallery_id;
+        this.url = "";
+        this.other_links = "";
+        this.timestamp = 0;
     }
     public int getId() {
         return this.id;
