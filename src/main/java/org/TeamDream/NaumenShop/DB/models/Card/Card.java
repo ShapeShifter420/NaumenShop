@@ -1,14 +1,10 @@
-package org.TeamDream.NaumenShop.DB.models;
-
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Type;
+package org.TeamDream.NaumenShop.DB.models.Card;
 
 import javax.persistence.*;
-import java.util.Map;
 
 @Entity
 @Table(name = "cardtable")
-public class Card implements IBdModel{
+public class Card implements IBdModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

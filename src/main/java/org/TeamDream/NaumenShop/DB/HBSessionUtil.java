@@ -1,6 +1,6 @@
 package org.TeamDream.NaumenShop.DB;
 
-import org.TeamDream.NaumenShop.DB.models.*;
+import org.TeamDream.NaumenShop.DB.models.Card.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

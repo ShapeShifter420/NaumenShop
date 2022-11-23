@@ -22,12 +22,12 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Card" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Category" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Description" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Price" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Seller" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Status" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Card" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Category" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Description" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Price" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Seller" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Status" />
 
 
     </session-factory>

@@ -1,5 +1,5 @@
 package org.TeamDream.NaumenShop.DB.models;
 
-public interface IBdModel {
-   int getId();
+public class Cart {
+
 }

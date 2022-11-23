@@ -1,12 +1,12 @@
-package org.TeamDream.NaumenShop.DB.models;
+package org.TeamDream.NaumenShop.DB.models.Card;
 
-import org.TeamDream.NaumenShop.DB.DataBase;
+import org.TeamDream.NaumenShop.DB.models.Card.IBdModel;
 
 import javax.persistence.*;
 import java.util.Map;
 @Entity
 @Table(name = "price_table")
-public class Price implements IBdModel{
+public class Price implements IBdModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

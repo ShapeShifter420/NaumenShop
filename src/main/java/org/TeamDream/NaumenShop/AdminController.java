@@ -1,11 +1,6 @@
 package org.TeamDream.NaumenShop;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.TeamDream.NaumenShop.DB.DataBase;
-import org.TeamDream.NaumenShop.DB.models.Card;
 import org.TeamDream.NaumenShop.format.FullCard;
-import org.TeamDream.NaumenShop.format.HalfCard;
 import org.TeamDream.NaumenShop.models.CardModel;
 import org.TeamDream.NaumenShop.models.ReCardModel;
 import org.TeamDream.NaumenShop.models.WebModelsToBD;

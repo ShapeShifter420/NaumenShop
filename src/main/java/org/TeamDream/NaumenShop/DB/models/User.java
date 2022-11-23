@@ -1,6 +1,8 @@
 package org.TeamDream.NaumenShop.DB.models;
 
-public class User  implements IBdModel{
+import org.TeamDream.NaumenShop.DB.models.Card.IBdModel;
+
+public class User  implements IBdModel {
     private int id;
 
     @Override

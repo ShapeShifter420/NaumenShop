@@ -1,25 +1,24 @@
-package org.TeamDream.NaumenShop.DB.models;
-
-import org.TeamDream.NaumenShop.DB.DataBase;
+package org.TeamDream.NaumenShop.DB.models.Card;
 
 import javax.persistence.*;
 import java.util.Map;
 @Entity
-@Table(name = "seller_table")
-public class Seller  implements IBdModel{
+@Table(name = "category_table")
+public class Category  implements IBdModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String seller_name;
+    private String name;
 
-    public Seller() {
+    public Category() {
     }
+
     public int getId() {
         return id;
     }
     public Map getMap(){
         return Map.of(
                 "id",this.id,
-                "seller_name",this.seller_name
+                "name",this.name
         );}
 }

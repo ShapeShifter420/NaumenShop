@@ -1,11 +1,10 @@
 package org.TeamDream.NaumenShop.models;
 
 import org.TeamDream.NaumenShop.DB.DataBase;
-import org.TeamDream.NaumenShop.DB.models.*;
+import org.TeamDream.NaumenShop.DB.models.Card.*;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class WebModelsToBD {
     public static HashMap<String,Object> AddNewCard(CardModel card){

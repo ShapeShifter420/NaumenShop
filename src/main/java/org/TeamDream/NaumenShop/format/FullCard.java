@@ -1,9 +1,8 @@
 package org.TeamDream.NaumenShop.format;
 
-import org.TeamDream.NaumenShop.DB.DataBase;
 import org.TeamDream.NaumenShop.DB.models.*;
+import org.TeamDream.NaumenShop.DB.models.Card.*;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

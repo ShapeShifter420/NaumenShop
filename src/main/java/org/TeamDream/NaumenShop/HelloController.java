@@ -2,17 +2,15 @@ package org.TeamDream.NaumenShop;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.TeamDream.NaumenShop.DB.DataBase;
-import org.TeamDream.NaumenShop.DB.models.Card;
+import org.TeamDream.NaumenShop.DB.models.Card.Card;
 import org.TeamDream.NaumenShop.format.FullCard;
 import org.TeamDream.NaumenShop.format.HalfCard;
 import org.TeamDream.NaumenShop.mailsender.MailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.*;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -66,6 +64,15 @@ public class HelloController {
         model.addAttribute("cardInfo", fullCard.getMap());
         return "card-fill.html";
     }
+
+    @RequestMapping(value = "/addtoCart/{cardId}", method = GET)
+    @ResponseBody
+    public String addToCart(@CookieValue("userId") String userId,
+            @PathVariable("cardId") int cardId) {
+
+        return "success";
+    }
+
     @GetMapping("/anotations")
     public String getanotations() {
         return "anotations.html";

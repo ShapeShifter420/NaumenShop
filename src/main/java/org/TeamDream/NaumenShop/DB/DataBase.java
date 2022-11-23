@@ -1,11 +1,10 @@
 package org.TeamDream.NaumenShop.DB;
 
-import org.TeamDream.NaumenShop.DB.models.Card;
-import org.TeamDream.NaumenShop.DB.models.IBdModel;
+import org.TeamDream.NaumenShop.DB.models.Card.Card;
+import org.TeamDream.NaumenShop.DB.models.Card.IBdModel;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class DataBase {

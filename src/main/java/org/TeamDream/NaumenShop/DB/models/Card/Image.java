@@ -1,10 +1,12 @@
-package org.TeamDream.NaumenShop.DB.models;
+package org.TeamDream.NaumenShop.DB.models.Card;
+
+import org.TeamDream.NaumenShop.DB.models.Card.IBdModel;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "image_table")
-public class Image  implements IBdModel{
+public class Image  implements IBdModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
