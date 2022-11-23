@@ -6,9 +6,9 @@ import javax.persistence.*;
 import java.util.Map;
 @Entity
 @Table(name = "seller_table")
-public class Seller {
+public class Seller  implements IBdModel{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String seller_name;
 

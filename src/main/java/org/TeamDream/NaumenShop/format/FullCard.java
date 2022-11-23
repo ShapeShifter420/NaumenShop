@@ -21,6 +21,7 @@ public class FullCard {
     private String otherlinks;
 
     private List images;
+    public  FullCard(){}
     public FullCard(Card card){
         this.id = card.getId();
         this.name = card.getName();

@@ -25,7 +25,8 @@ public class HBSessionUtil {
                 configuration.addAnnotatedClass(Price.class);
                 configuration.addAnnotatedClass(Status.class);
                 configuration.addAnnotatedClass(Seller.class);
-
+                configuration.addAnnotatedClass(Gallery.class);
+                configuration.addAnnotatedClass(Image.class);
                 //System.out.println(name + password);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());

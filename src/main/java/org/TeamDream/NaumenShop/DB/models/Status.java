@@ -7,12 +7,15 @@ import java.util.Map;
 
 @Entity
 @Table(name = "status_table")
-public class Status {
+public class Status  implements IBdModel{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String status;
 
+    public Status(boolean status) {
+        this.status = status ? "InStock":"OutStock";
+    }
     public Status() {
     }
     public int getId() {

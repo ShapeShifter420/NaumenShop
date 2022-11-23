@@ -6,15 +6,19 @@ import javax.persistence.*;
 import java.util.Map;
 @Entity
 @Table(name = "price_table")
-public class Price {
+public class Price implements IBdModel{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private int current_price;
     private int old_price;
     private int bonus_price;
-
     public Price() {
+    }
+    public Price(int cur,int old,int bonus) {
+        this.current_price = cur;
+        this.old_price = old;
+        this.bonus_price = bonus;
     }
 
     public int getId() {
