@@ -8,6 +8,7 @@ import org.TeamDream.NaumenShop.format.HalfCard;
 import org.TeamDream.NaumenShop.mailsender.MailSender;
 import org.TeamDream.NaumenShop.models.CardModel;
 import org.TeamDream.NaumenShop.models.Filter;
+//import org.TeamDream.NaumenShop.mailsender.MailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,7 +23,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
 public class HelloController {
-    public MailSender m = new MailSender();
+//    public MailSender m = new MailSender();
     @GetMapping("/")
     public String sayHello() {
         return "index.html";
