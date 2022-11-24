@@ -15,10 +15,9 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @Controller
 public class AdminController {
     @RequestMapping(value = "/admin", method = GET)
-    @ResponseBody
     public String admin(Model model) {
         model.addAttribute("cardM", new CardModel());
-        return "admin";
+        return "admin.html";
     }
     @RequestMapping(value = "/admin/addpanel/", method = GET)
     public String getaddpanel(Model model) {
@@ -32,11 +31,11 @@ public class AdminController {
     @RequestMapping(value = "/admin/removepanel/", method = GET)
     @ResponseBody
     public String getremovepanel(Model model) {
-        model.addAttribute("recard", new ReCardModel());
+        model.addAttribute("reCardM", new ReCardModel());
         return "removepanel.html";
     }
     @RequestMapping(value="/admin/removepanel/", method= RequestMethod.POST)
-    public String submitremove(@ModelAttribute FullCard card, Model model) throws IOException {
-
+    public String submitremove(@ModelAttribute ReCardModel recard, Model model) throws IOException {
+        WebModelsToBD.RemoveCard(recard);
         return "redirect:/admin";}
 }
