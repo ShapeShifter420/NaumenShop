@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta content="text/html; charset=utf-8">
+    <link type="text/css" href="/css/style.css" rel="stylesheet" />
+    <title>Auth</title>
 </head>
-<body>
+<body class="background">
+
+<div class="mask"></div>
+<div class="login">
+    <form class="login-form" th:action="@{/login}" method="post">
+        <p><b>SIGN IN</b></p>
+        <input type="text" placeholder="USERNAME" id="username" name="username" >
+        <input type="password" placeholder="PASSWORD" id="password" name="password" >
+        <input type="submit" value="Sign In">
+        <a href="/registration">Sign Up</a>
+    </form>
+</div>
 
 </body>
 </html>

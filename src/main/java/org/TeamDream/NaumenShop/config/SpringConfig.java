@@ -34,7 +34,7 @@ public class SpringConfig implements WebMvcConfigurer {
         templateResolver.setPrefix("/WEB-INF/views/");
         System.out.println(templateResolver.getSuffix());
         //if (!templateResolver.getSuffix().equals(".jsp"))
-        //templateResolver.setSuffix(".html");
+//        templateResolver.setSuffix(".html");
         return templateResolver;
     }
 
@@ -50,7 +50,7 @@ public class SpringConfig implements WebMvcConfigurer {
     public void configureViewResolvers(ViewResolverRegistry registry) {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
-        resolver.setCharacterEncoding("UTF-8");
+//        resolver.setCharacterEncoding("UTF-8");
         registry.viewResolver(resolver);
     }
     //@Override
