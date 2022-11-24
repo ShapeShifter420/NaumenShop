@@ -36,12 +36,13 @@ public class DataBase {
             session.close();
         }
     }
-    public static List getImagesFromGallery(int id){
-        System.out.println(String.format("select src from images_table where gallery_id == %d;",id));
+    public static List getImagesFromGallery(int id) {
+        System.out.println(String.format("select src from images_table where gallery_id == %d;", id));
         try (Session session = HBSessionUtil.getSessionFactory().getCurrentSession()) {
-        //System.out.println(String.format("select src from images_table where gallery_id == %d;",id));
-        try (Session session = HBSessionUtil.getSessionFactory().openSession()) {
-            return session.createSQLQuery(String.format("select src from images_table where gallery_id = %d;",id)).list();
+            //System.out.println(String.format("select src from images_table where gallery_id == %d;",id));
+            try (Session session2 = HBSessionUtil.getSessionFactory().openSession()) {
+                return session2.createSQLQuery(String.format("select src from images_table where gallery_id = %d;", id)).list();
+            }
         }
     }
 

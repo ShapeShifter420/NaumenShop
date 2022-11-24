@@ -23,7 +23,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
 public class HelloController {
-//    public MailSender m = new MailSender();
+    public MailSender m = new MailSender();
     @GetMapping("/")
     public String sayHello() {
         return "index.html";
