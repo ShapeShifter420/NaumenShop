@@ -1,14 +1,14 @@
-package org.TeamDream.NaumenShop.DB.models;
+package org.TeamDream.NaumenShop.DB.models.Card;
 
-import org.TeamDream.NaumenShop.DB.DataBase;
+import org.TeamDream.NaumenShop.DB.models.Card.IBdModel;
 
 import javax.persistence.*;
 import java.util.Map;
 @Entity
 @Table(name = "seller_table")
-public class Seller {
+public class Seller  implements IBdModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String seller_name;
 

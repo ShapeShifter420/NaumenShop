@@ -1,13 +1,10 @@
-package org.TeamDream.NaumenShop.DB.models;
-
-import org.hibernate.annotations.Type;
+package org.TeamDream.NaumenShop.DB.models.Card;
 
 import javax.persistence.*;
-import java.util.Map;
 
 @Entity
 @Table(name = "cardtable")
-public class Card {
+public class Card implements IBdModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -27,10 +24,15 @@ public class Card {
     public Card() {
     }
 
-    public Card(String name, int age) {
+    public Card(String name,int price_id,int seller_id,int description_id,int status_id,int category_id,int gallery_id) {
         this.name = name;
+        this.price_id = price_id;
+        this.seller_id = seller_id;
+        this.description_id = description_id;
+        this.status_id = status_id;
+        this.category_id = category_id;
+        this.gallery_id = gallery_id;
     }
-
     public int getId() {
         return this.id;
     }

@@ -1,17 +1,18 @@
 package org.TeamDream.NaumenShop.format;
 
 import org.TeamDream.NaumenShop.DB.models.*;
-import org.TeamDream.NaumenShop.DB.models.Card.*;
+import org.TeamDream.NaumenShop.DB.models.Card.Card;
+import org.TeamDream.NaumenShop.DB.models.Card.Category;
+import org.TeamDream.NaumenShop.DB.models.Card.Price;
+import org.TeamDream.NaumenShop.DB.models.Card.Status;
 
 import java.util.List;
 import java.util.Map;
 
-public class FullCard {
+public class HalfCard {
     private int id;
     private String name;
     private Price price;
-    private Seller seller;
-    private Description description;
     private Status status;
     private Category category;
     private int timestamp;
@@ -20,16 +21,13 @@ public class FullCard {
     private String otherlinks;
 
     private List images;
-    public  FullCard(){}
-    public FullCard(Card card){
+    public HalfCard(Card card){
         this.id = card.getId();
         this.name = card.getName();
         this.timestamp = card.getTimestamp();
         this.url = card.getUrl();
         this.otherlinks = card.getOtherLinks();
         this.price = Fabric.getPrice(card.getPrice_id());
-        this.seller = Fabric.getBSeller(card.getSeller_id());
-        this.description = Fabric.getDescription(card.getDescription_id());
         this.status = Fabric.getStatus(card.getStatus_id());
         this.category =Fabric.getCategory(card.getCategory_id());
         this.images = Fabric.getImages(card.getGallery_id());
@@ -43,9 +41,8 @@ public class FullCard {
                 "timestamp",this.timestamp,
                 "url",this.url,
                 "price",this.price.getMap(),
-                "seller",this.seller.getMap(),
-                "description",this.description.getMap(),
                 "status",this.status.getMap(),
                 "category",this.category.getMap()
         );}
 }
+

@@ -1,6 +1,6 @@
 package org.TeamDream.NaumenShop.DB;
 
-import org.TeamDream.NaumenShop.DB.models.*;
+import org.TeamDream.NaumenShop.DB.models.Card.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -25,7 +25,8 @@ public class HBSessionUtil {
                 configuration.addAnnotatedClass(Price.class);
                 configuration.addAnnotatedClass(Status.class);
                 configuration.addAnnotatedClass(Seller.class);
-
+                configuration.addAnnotatedClass(Gallery.class);
+                configuration.addAnnotatedClass(Image.class);
                 //System.out.println(name + password);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());

@@ -8,9 +8,9 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost:5432/naumenshop</property>
-        <property name="connection.username"></property>
-        <property name="connection.password"></property>
+        <property name="connection.url">jdbc:postgresql://89.22.229.252:5432/naumenshop</property>
+        <property name="connection.username">dreamteam</property>
+        <property name="connection.password">dreamteam</property>
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
 
@@ -22,12 +22,12 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Card" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Category" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Description" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Price" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Seller" />
-        <mapping class="org.TeamDream.NaumenShop.DB.models.Status" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Card" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Category" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Description" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Price" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Seller" />
+        <mapping class="org.TeamDream.NaumenShop.DB.models.Card.Status" />
 
 
     </session-factory>

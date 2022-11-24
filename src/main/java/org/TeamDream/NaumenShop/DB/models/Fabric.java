@@ -1,6 +1,7 @@
 package org.TeamDream.NaumenShop.DB.models;
 
 import org.TeamDream.NaumenShop.DB.DataBase;
+import org.TeamDream.NaumenShop.DB.models.Card.*;
 
 import java.util.List;
 

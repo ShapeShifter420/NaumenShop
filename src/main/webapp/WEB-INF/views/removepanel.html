@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -9,48 +10,48 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <link rel="stylesheet" href="/resources/css/card.css">
     <style>
-        .small-img-group{
-            display: flex;
-            justify-content: space-between;
-        }
-        .small-img-col{
-            flex-basis: 24%;
-            cursor:pointer;
-        }
-        .sproduct select{
-            display: block;
-            padding: 5px 10px;
-        }
-        .sproduct input{
-            width: 50px;
-            height: 40px;
-            padding-left: 10px;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-        .sproduct input:focus{
-            outline: none;
-        }
-        .buy-btn{
-            opacity: 1;
-            transition: 0.3s all;
-            border: none;
-            outline: none;
+    .small-img-group{
+      display: flex;
+      justify-content: space-between;
+    }
+    .small-img-col{
+      flex-basis: 24%;
+      cursor:pointer;
+    }
+    .sproduct select{
+      display: block;
+      padding: 5px 10px;
+    }
+    .sproduct input{
+      width: 50px;
+      height: 40px;
+      padding-left: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    .sproduct input:focus{
+      outline: none;
+    }
+    .buy-btn{
+      opacity: 1;
+      transition: 0.3s all;
+      border: none;
+      outline: none;
 
-            display: inline-block;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 5px;
-        }
-        .buy-btn:hover{
-            outline: none;
-            background: lightblue;
-            border: none;
-        }
-        .buy-btn:focus{
-            outline: none;
-        }
-    </style>
+      display: inline-block;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .buy-btn:hover{
+      outline: none;
+      background: lightblue;
+      border: none;
+    }
+    .buy-btn:focus{
+      outline: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -88,7 +89,11 @@
     </div>
 </nav>
 <section class="container sproduct my-5 pt-5">
-    <h1>START PAGE</h1>
+    <form action="#" th:action="@{/admin/addpanel/}" th:object="${reCardM}" method="post">
+        <p>Name: <input type="text" th:field="*{id}" /></p>
+
+        <p><input type="submit" value="Remove" />
+    </form>
 </section>
 <footer class="mt-5 py-5">
     <div class="row container mx-auto pt-5">
